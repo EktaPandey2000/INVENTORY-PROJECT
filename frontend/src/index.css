@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { 
+    @apply bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased; 
+    font-family: 'Inter', system-ui, sans-serif; 
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 dark:bg-slate-700 rounded-full; }
+}
+
+@layer components {
+  /* गहरी शैडो (Deep Shadows) और गोल कोने वाले कार्ड्स */
+  .card { 
+    @apply bg-white dark:bg-slate-900 rounded-[2rem] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 dark:border-slate-800 transition-all duration-300; 
+  }
+  
+  /* बटन्स में शानदार ग्रेडिएंट और ग्लो इफ़ेक्ट */
+  .btn { 
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed; 
+  }
+  .btn-primary { 
+    @apply btn bg-gradient-to-r from-teal-500 to-emerald-500 text-white hover:from-teal-600 hover:to-emerald-600 shadow-lg shadow-teal-500/30 hover:shadow-teal-500/50 hover:-translate-y-0.5; 
+  }
+  .btn-ghost { 
+    @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700; 
+  }
+  
+  /* इनपुट फील्ड्स */
+  .input { 
+    @apply w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all duration-300 text-sm font-medium; 
+  }
+  .label { 
+    @apply block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300; 
+  }
+}
